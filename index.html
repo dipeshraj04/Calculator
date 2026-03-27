@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A feature-rich scientific calculator built with HTML, CSS, and JavaScript. It includes functions for trigonometry, logarithms, factorials, and more.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Scientific Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+                <h1>Calculator</h1>
+                <div class="toggle-section">
+                    <label for="scientific-toggle">Scientific</label>
+                    <input type="checkbox" id="scientific-toggle">
+                </div>
+            </div>
+            
+            <div class="calc-body">
+                <!-- Scientific Calculator Panel (Left Side) -->
+                <div id="scientific-keys" class="scientific-keys">
+                    <button class="scientific">sin</button>
+                    <button class="scientific">cos</button>
+                    <button class="scientific">tan</button>
+                    <button class="scientific">π</button>
+                    <button class="scientific">√</button>
+                    <button class="scientific">x²</button>
+                    <button class="scientific">x³</button>
+                    <button class="scientific">log</button>
+                    <button class="scientific">ln</button>
+                    <button class="scientific">e</button>
+                    <button class="scientific">!</button>
+                    <button class="scientific">%</button>
+                    <button class="scientific">.</button>
+                    <button class="scientific">-</button>
+                    <button class="scientific">(</button>
+                    <button class="scientific">)</button>
+                </div>
+
+                <!-- Main Calculator (Right Side) -->
+                <div class="main-calc">
+                    <input type="text" id="display" placeholder="0">
+                    
+                    <div id="keys" class="basic-keys">
+                        <!-- Basic Calculator -->
+                        <button class="basic">9</button>
+                        <button class="basic">8</button>
+                        <button class="basic">7</button>
+                        <button class="operator">+</button>
+                        <button class="basic">6</button>
+                        <button class="basic">5</button>
+                        <button class="basic">4</button>
+                        <button class="operator">*</button>
+                        <button class="basic">1</button>
+                        <button class="basic">2</button>
+                        <button class="basic">3</button>
+                        <button class="operator">/</button>
+                        <button class="operator">AC</button>
+                        <button class="basic">0</button>
+                        <button class="basic">00</button>
+                        <button class="equals">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Advanced Scientific Calculator | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

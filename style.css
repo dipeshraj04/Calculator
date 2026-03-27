@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    min-width: 320px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.toggle-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.toggle-section label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Toggle Switch */
+#scientific-toggle {
+    appearance: none;
+    width: 45px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+#scientific-toggle:checked {
+    background-color: #4CAF50;
+}
+
+#scientific-toggle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+#scientific-toggle:checked::before {
+    transform: translateX(21px);
+}
+
+/* Calculator Body - Flex Layout */
+.calc-body {
+    display: flex;
+    gap: 0;
+    transition: all 0.3s ease;
+}
+
+.main-calc {
+    flex: 1;
+    min-width: 200px;
+}
+
+#display {
+    width: 100%;
+    padding: 15px;
+    text-align: right;
+    font-size: 2.2rem;
+    background-color: hsl(0, 0%, 20%);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #667eea;
+}
+
+#display:focus {
+    outline: none;
+    background-color: hsl(0, 0%, 22%);
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 12px;
+}
+
+.basic-keys {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Scientific Keys - Hidden by default, shown as left sidebar */
+.scientific-keys {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: 10px 8px;
+    background-color: hsl(0, 0%, 12%);
+    border-right: 2px solid #ff6b6b;
+    min-width: 120px;
+}
+
+button {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 45px;
+    padding: 0;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button.basic {
+    background-color: hsl(0, 0%, 35%);
+}
+
+button.basic:hover {
+    background-color: hsl(0, 0%, 45%);
+}
+
+button.operator {
+    background-color: #667eea;
+    font-size: 16px;
+}
+
+button.operator:hover {
+    background-color: #5568d3;
+}
+
+button.equals {
+    background-color: #4CAF50;
+    font-size: 16px;
+}
+
+button.equals:hover {
+    background-color: #45a049;
+}
+
+button.scientific {
+    background-color: #ff6b6b;
+    font-size: 12px;
+    padding: 5px;
+}
+
+button.scientific:hover {
+    background-color: #ff5252;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid #ff6b6b;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .calculator {
+        min-width: 90vw;
+        max-width: 100%;
+    }
+
+    #display {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 16px;
+        min-height: 50px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+}
